@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<nav style="background: #343a40; padding: 10px; text-align: center;">
+    <a href="{% url 'home' %}" style="color: white; margin: 10px;">Home</a>
+    <a href="{% url 'topping_list' %}" style="color: white;">Manage Toppings</a>
+    <a href="{% url 'pizza_list' %}" style="color: white;">Manage Pizzas</a>
+</nav>
+{% block title %}Add Pizza{% endblock %}
+
+{% block content %}
+<div class="pizza-page">
+<h1>Master Pizzas</h1>
+<ul>
+    {% for pizza in pizzas %}
+        <li>
+            <strong>{{ pizza.name }}</strong>: 
+            {% for topping in pizza.toppings.all %}
+                {{ topping.name }}{% if not forloop.last %}, {% endif %}
+            {% endfor %}
+            <a href="{% url 'update_pizza' pizza.id %}">Edit</a>
+            <a href="{% url 'delete_pizza' pizza.id %}">Delete</a>
+        </li>
+    {% endfor %}
+</ul>
+    <div class="add-button">
+        <a href="{% url 'add_pizza' %}">Add Pizza</a>
+    </div>
+</div>
+{% endblock %}

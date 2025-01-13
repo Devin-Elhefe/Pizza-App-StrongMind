@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+{% block title %}Add Pizza{% endblock %}
+
+{% block content %}
+<h1>Add Topping</h1>
+
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Topping Name">
+    <button type="submit">Add</button>
+</form>
+<a href="{% url 'topping_list' %}">Back to List</a>
+{% endblock %}

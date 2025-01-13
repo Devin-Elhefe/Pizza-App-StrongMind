@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
+<nav style="background: #343a40; padding: 10px; text-align: center;">
+    <a href="{% url 'home' %}" style="color: white; margin: 10px;">Home</a>
+    <a href="{% url 'topping_list' %}" style="color: white;">Manage Toppings</a>
+    <a href="{% url 'pizza_list' %}" style="color: white;">Manage Pizzas</a>
+</nav>
+
+{% block title %}Add Pizza{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1>Welcome to the Pizza App</h1>
+    <div class="summary">
+        <div class="summary-item">
+            <h2>Total Toppings</h2>
+            <p>{{ total_toppings }}</p>
+        </div>
+        <div class="summary-item">
+            <h2>Total Pizzas</h2>
+            <p>{{ total_pizzas }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
