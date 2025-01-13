@@ -2,8 +2,9 @@
 
 A simple Django-based web application for managing pizzas and toppings.
 
+![Pizzaappscreenshot](https://github.com/user-attachments/assets/edad35f0-b4a1-4c6e-ab82-ea85bbe31a56)
 
-![Pizza App Screenshot](static/images/Pizzaappscreenshot.png)
+
 
 **Pizza App Link**
 
